@@ -18,12 +18,11 @@
     "url": "git+https://github.com/sujamanoj/Team-Profile-Generator.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "suja",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sujamanoj/Team-Profile-Generator/issues"
   },
   "homepage": "https://github.com/sujamanoj/Team-Profile-Generator#readme",
-  "devDependencies": {},
   "description": ""
 }
