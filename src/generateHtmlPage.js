@@ -5,23 +5,24 @@ const Engineer = require("../lib/Engineer");
 let cards = ``;
 
 function generateMember(e) {
+  console.log(e);
   switch (e.member) {
     case "Engineer":
       var member = new Engineer(e.name, e.id, e.email, e.github);
-      generateCards(member);
+      engineerCards(member);
       break;
     case "Manager":
       var member = new Manager(e.name, e.id, e.email, e.officeNumber);
-      generateCards(member);
+      managerCards(member);
       break;
     case "Intern":
       var member = new Intern(e.name, e.id, e.email, e.school);
-      generateCards(member);
+      internCards(member);
       break;
   }
 }
 
-function generateCards(member) {
+function internCards(member) {
   return (cards = `${cards}
             <div class="col-3">
                 <div class="card mx-5 mb-3">
@@ -40,6 +41,47 @@ function generateCards(member) {
                 </div>
             </div>
         `);
+}
+
+function managerCards(member) {
+  return (cards = `${cards}
+              <div class="col-3">
+                  <div class="card mx-5 mb-3">
+                      <div class="card-header bg-info text-center text-light h4">
+                          ${member.name} 
+                          <br />
+                          ${member.getIcon()} ${member.getRole()}
+                      </div>
+                      <div class='card-body px-3'>
+                          <p class='card-text'>ID: ${member.id}</p>
+                          <p class='card-text'>Email: <a href='mailto:${
+                            member.email
+                          }'>${member.email}</a></p>
+                          <p class='card-text'>${member.getOfficeNumber()}</p>
+                      </div>
+                  </div>
+              </div>
+          `);
+}
+function engineerCards(member) {
+  return (cards = `${cards}
+                <div class="col-3">
+                    <div class="card mx-5 mb-3">
+                        <div class="card-header bg-info text-center text-light h4">
+                            ${member.name} 
+                            <br />
+                            ${member.getIcon()} ${member.getRole()}
+                        </div>
+                        <div class='card-body px-3'>
+                            <p class='card-text'>ID: ${member.id}</p>
+                            <p class='card-text'>Email: <a href='mailto:${
+                              member.email
+                            }'>${member.email}</a></p>
+                            <p class='card-text'>${member.getSpecial()}</p>
+                        </div>
+                    </div>
+                </div>
+            `);
 }
 
 function generateHtml() {

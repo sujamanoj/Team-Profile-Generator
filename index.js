@@ -91,8 +91,8 @@ function promptManager(answers) {
         },
       },
     ])
-    .then((officeNumber) => {
-      answers.officeNumber = officeNumber;
+    .then((manageranswer) => {
+      answers.officeNumber = manageranswer.officeNumber;
       return generateMember(answers);
     })
     .then(promptAddNewMember);
@@ -116,7 +116,7 @@ function promptEngineer(answers) {
       },
     ])
     .then((github) => {
-      answers.github = github;
+      answers.github = github.github;
       return generateMember(answers);
     })
     .then(promptAddNewMember);
@@ -140,7 +140,7 @@ function promptIntern(answers) {
       },
     ])
     .then((school) => {
-      answers.school = school;
+      answers.school = school.school;
       return generateMember(answers);
     })
     .then(promptAddNewMember);
